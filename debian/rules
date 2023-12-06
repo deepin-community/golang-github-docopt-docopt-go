@@ -1,4 +1,15 @@
 #!/usr/bin/make -f
 
+export DH_GOPKG := github.com/docopt/docopt-go
+export DH_GOLANG_INSTALL_EXTRA := $(shell find . -name '*.docopt')
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang
+
+
+override_dh_install:
+	rm -rf debian/golang-github-docopt-docopt-go-dev/usr/bin
+	rm -rf debian/golang-github-docopt-docopt-go-dev/usr/share/gocode/src/github.com/docopt/docopt-go/examples
+	rm -rf debian/golang-github-docopt-docopt-go-dev/usr/share/gocode/src/github.com/docopt/docopt-go/docopt_test.go
+	rm -rf debian/golang-github-docopt-docopt-go-dev/usr/share/gocode/src/github.com/docopt/docopt-go/example_test.go
+	dh_install
