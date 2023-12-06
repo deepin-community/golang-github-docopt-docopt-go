@@ -1,5 +1,49 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-docopt-docopt-go (0.6.2+git20180111.ee0de3b-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 0.6.2+git20180111.ee0de3b
+  * debian/watch: Set to track git HEAD with "pretty=0.6.2+git%cd.%h"
+  * Apply "cme fix dpkg" fixes:
+    - Organize debian/control fields
+    - Bump Standards-Version to 4.5.1 (no change)
+    - Change license shortcode MIT to Expat in debian/copyright
+  * debian/control:
+    - Update Maintainer email address to team+pkg-go@tracker.debian.org
+    - Change Section from devel to golang
+    - Bump debhelper dependency to "Build-Depends: debhelper-compat (= 13)"
+    - Add myself to the list of Uploaders and adopt the package
+      (Closes: #939018)
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Mon, 21 Dec 2020 21:26:11 -0700
+
+golang-github-docopt-docopt-go (0.6.2+git20160216.0.784ddc5-3) unstable; urgency=medium
+
+  * Team upload.
+  * mark golang-github-docopt-docopt-go-dev Multi-Arch: foreign.
+    Closes: #960818.
+
+ -- Drew Parsons <dparsons@debian.org>  Sun, 23 Aug 2020 02:26:01 +0800
+
+golang-github-docopt-docopt-go (0.6.2+git20160216.0.784ddc5-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Dmitry Smirnov ]
+  * rules: fixed testing (Closes: #952302)
+  * Priority: optional; Standards-Version: 4.5.0
+  * Testsuite: autopkgtest-pkg-go
+  * golang-go --> golang-any
+  * Rules-Requires-Root: no
+  * DH to version 12
+  * Introduced "watch" file
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 04 Mar 2020 12:04:37 +1100
+
+golang-github-docopt-docopt-go (0.6.2+git20160216.0.784ddc5-1) unstable; urgency=medium
+
+  * Initial release (Closes: #809194)
+
+ -- gustavo panizzo <gfa@zumbi.com.ar>  Sun, 03 Jul 2016 06:04:32 +0200
